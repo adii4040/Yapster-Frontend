@@ -63,6 +63,7 @@ const SignUp = () => {
         progress: undefined,
         theme: "dark",
       });
+      resetReqStatus("registerUser");
       setTimeout(() => {
 
         navigate('/login');
@@ -80,8 +81,9 @@ const SignUp = () => {
         progress: undefined,
         theme: "dark",
       });
+      resetReqStatus("registerUser");
     }
-  }, [isSuccess, isError, registerResData, error]);
+  }, [isSuccess, isError, registerResData, error, navigate]);
 
 
   return (

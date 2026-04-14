@@ -38,6 +38,7 @@ const Login = () => {
         progress: undefined,
         theme: "dark",
       });
+      resetReqStatus("loginUser");
       setTimeout(() => {
 
         navigate('/');
@@ -56,6 +57,7 @@ const Login = () => {
         progress: undefined,
         theme: "dark",
       });
+      resetReqStatus("loginUser");
     }
   }, [isSuccess, isError, authUser, error])
   return (

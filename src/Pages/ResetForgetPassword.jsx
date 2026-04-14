@@ -45,6 +45,7 @@ const ResetForgetPassword = () => {
 
                 navigate('/login');
             }, 1500);
+            resetReqStatus("resetForgetPassword");
         }
 
         if (isError && error) {
@@ -58,8 +59,9 @@ const ResetForgetPassword = () => {
                 progress: undefined,
                 theme: "dark",
             });
+            resetReqStatus("resetForgetPassword");
         }
-    }, [isSuccess, isError, resetForgetPasswordResData, error])
+    }, [isSuccess, isError, resetForgetPasswordResData, error, navigate])
     return (
         <div className="h-screen grid lg:grid-cols-2">
             {/* Left Side - Form */}

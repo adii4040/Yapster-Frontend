@@ -43,9 +43,6 @@ const Update = () => {
   };
 
   useEffect(() => {
-
-    resetReqStatus("updateUser")
-    
     if (isSuccess && updateUserResData?.message) {
 
       toast.success(updateUserResData.message, {
@@ -58,10 +55,10 @@ const Update = () => {
         progress: undefined,
         theme: "dark",
       });
+      resetReqStatus("updateUser");
       setTimeout(() => {
         navigate(`/user/${userId}/profile`);
       }, 1500);
-
 
     }
 
@@ -76,6 +73,7 @@ const Update = () => {
         progress: undefined,
         theme: "dark",
       });
+      resetReqStatus("updateUser");
     }
 
 

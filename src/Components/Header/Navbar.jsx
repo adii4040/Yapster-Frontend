@@ -25,7 +25,7 @@ const Navbar = () => {
               <span className="hidden sm:inline">Settings</span>
             </Link>
 
-            {authUser && (
+            {authUser ? (
               <>
                 <Link to={`/user/${currentUser?._id}/profile`} className={`btn btn-sm gap-2`}>
                   <User className="size-5" />
@@ -36,6 +36,15 @@ const Navbar = () => {
                   <LogOut className="size-5" />
                   <span className="hidden md:inline">Logout</span>
                 </button>
+              </>
+            ) : (
+              <>
+                <Link to={"/login"} className="btn btn-sm btn-ghost gap-2">
+                  <span className="hidden sm:inline">Sign In</span>
+                </Link>
+                <Link to={"/signup"} className="btn btn-sm btn-primary gap-2">
+                  <span className="hidden sm:inline">Sign Up</span>
+                </Link>
               </>
             )}
           </div>

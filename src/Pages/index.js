@@ -7,6 +7,7 @@ import ReqForgetPassword from './ReqForgetPassword'
 import ResetForgetPassword from './ResetForgetPassword'
 import Update from './Update'
 import VerifyEmail from './VerifyEmail'
+import Landing from './Landing'
 
 
 export {
@@ -18,5 +19,6 @@ export {
     ReqForgetPassword,
     ResetForgetPassword,
     Update,
-    VerifyEmail
+    VerifyEmail,
+    Landing
 }

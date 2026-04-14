@@ -18,7 +18,7 @@ function ReqForgetPassword() {
         forgetPasswordRequest({email})
     }
 
-    useEffect(() => {
+  useEffect(() => {
         if (isSuccess && forgetPasswordReqResData?.message) {
             toast.success(forgetPasswordReqResData.message, {
                 position: "top-right",
@@ -30,6 +30,7 @@ function ReqForgetPassword() {
                 progress: undefined,
                 theme: "dark",
             });
+            resetReqStatus("forgetPassword");
         }
         if (isError) {
             console.log(error)
@@ -43,6 +44,7 @@ function ReqForgetPassword() {
                 progress: undefined,
                 theme: "dark",
             });
+            resetReqStatus("forgetPassword");
         }
     }, [isSuccess, isError, error, forgetPasswordReqResData])
     return (
