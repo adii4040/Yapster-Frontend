@@ -11,9 +11,9 @@ function SideBar({ users }) {
 
     const filteredUser = showOnlineUser ? users.filter((user) => onlineUsers.includes(user._id)) : users
     return (
-        <div>
+        <div className="h-full flex flex-col">
             <div className='flex flex-col gap-1 p-5 border-b border-base-content/10 '>
-                <div className='flex'>
+                <div className='flex items-center gap-2'>
                     <Users className='size-6' />
                     <span className='font-medium hidden md:block'> Contacts </span>
                 </div>
@@ -28,11 +28,11 @@ function SideBar({ users }) {
                         />
                         <span className="text-sm">Show online only</span>
                     </label>
-                    <span className="text-xs text-zinc-500">({onlineUsers.length - 1} online)</span>
+                    <span className="text-xs text-base-content/60">({onlineUsers.length - 1} online)</span>
                 </div>
             </div>
 
-            <div className='w-full flex flex-col py-3 overflow-auto '>
+            <div className='w-full flex-1 flex flex-col py-3 overflow-y-auto '>
                 {
                     filteredUser?.map((user) => (
                         <button key={user._id} className={`w-full flex items-center  p-3 gap-3   ${selectedUser?._id === user._id ? "bg-base-300 " : "hover:bg-base-300"} transition-colors`} onClick={() => selectUser(user)}>

@@ -15,6 +15,10 @@ function App() {
     getCurrentUser()
   }, [getCurrentUser])
 
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
   if (isFetchingCurrentUser && !authUser) {
     return (
       <div className="h-screen flex items-center justify-center" data-theme={theme}>
@@ -25,7 +29,7 @@ function App() {
 
   return (
     <>
-      <div data-theme={theme}>
+      <div data-theme={theme} className="min-h-screen flex flex-col bg-base-100">
         <Routes>
           <Route path='/' element={<Layout />}>
 
